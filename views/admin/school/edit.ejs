@@ -1,0 +1,66 @@
+<%- include('../header.ejs') %>
+    <%- include('../sidebar.ejs') %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">Edit School</h3>
+                   
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body mx-auto" style="width: 500px;">
+                    <form action="/admin/schoolupdate/<%= d._id %>" method="post" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label>Name</label>
+                            <input type="text" value="<%= d.name %>" name="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Address</label>
+                            <textarea class="form-control" name="address"><%= d.address %></textarea>
+                        </div>
+                        <div class="form-group">
+                            <label>Des</label>
+                            <input type="text" name="des" value="<%= d.des %>"class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>AffiliatedBoard</label>
+                            <input type="text" name="affiliatedBoard" value="<%= d.affiliatedBoard %>"class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>InstructionMedium</label>
+                            <input type="text" name="instructionMedium" value="<%= d.instructionMedium %>"class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>category</label>
+                            <input type="text" name="category" value="<%= d.category %>"class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Image</label>
+                            <input type="file" name="image" class="form-control">
+                        </div>
+                        <img src="<%= d.image.url %>" width="100" style="border-radius: 50px;">
+                        <br><br>
+
+
+
+
+                        <button class="btn btn-success">Update</button>
+                    </form>
+                </div>
+                <!-- /.card-body -->
+
+
+                <!-- modal start add school -->
+                
+                <!-- /.modal end -->
+            </div>
+            <!-- /.card -->
+
+
+
+        </div>
+        <!-- /.content-wrapper -->
+
+
+        <%- include('../footer.ejs') %>

@@ -1,0 +1,47 @@
+<%- include('../header.ejs') %>
+    <%- include('../sidebar.ejs') %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">View Book</h3>
+                   
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Email</th>
+                                 <th>Address</th>
+                                <th>Phone</th>
+                                <th>Action</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                          <% i=1 %>
+                          <% d.forEach((d)=>{ %>
+                                <tr>
+                                    <td><%= i++ %></td>
+                                    <td><%= d.name %></td>
+                                    <td><%= d.email %></td> 
+                                    <td><%= d.address %></td>
+                                    <td><%= d.phone %></td>  
+                                    <td><a href="" class="btn btn-danger">Delete</a></td>
+                                </tr>
+                           <% }) %>
+                         </tbody>
+                        
+                    </table>
+                </div>
+                <!-- /.card-body -->
+
+
+                
+
+
+        <%- include('../footer.ejs') %>

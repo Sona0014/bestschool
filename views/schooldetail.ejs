@@ -1,0 +1,193 @@
+<%- include('./header.ejs') %>
+    <div class="carousel slide" data-bs-ride="carousel" id="s">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#s" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100" height="600px">
+                <div class="carousel-caption">
+
+                </div>
+
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100 " height="600px">
+
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/357271/pexels-photo-357271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100 " height="600px">
+
+            </div>
+            <div class="carousel-item " data-bs-interval="2000">
+                <img src="https://images.pexels.com/photos/2305098/pexels-photo-2305098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100" height="600px">
+            </div>
+        </div><!--carousel-inner end-->
+
+        <!--search start-->
+        <div class="container-fluid bg-secondary mb-5" style="padding: 30px;">
+            <div class="container">
+                <form action="/search" method="post">
+                    <div class="row g-2">
+                        <div class="col-md-12">
+                            <div class="row g-2">
+                                <div class="col-md-10">
+                                    <input type="text" name="search" placeholder="Search By City Location"
+                                        class="form-control py-3 text-center">
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="">
+                                        <button class="btn btn-danger border-0 w-100 py-3">Search</button>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!--search end-->
+        <div class="mt-5 text-center">
+            <h1>
+                <a style="color: #f80;">
+                    <%= d.name %>
+                </a>
+                <p style="font-size: medium;">
+                    <%= d.Address %>
+                </p>
+                <p style="font-size: medium; text-align: justify; padding-left: 69px;
+        padding-right: 78px;">
+                    <%= d.des %>
+                </p>
+            </h1>
+        </div>
+        <div class="container shadow-lg mt-5" style="border-radius: 1rem 1rem 1rem 1rem;">
+            <div class="row">
+                <div class="mt-5"></div>
+                <h3 style="color: #f80;">
+                    Summer Valley School Address on Map
+                </h3>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d110204.81254605687!2d77.93473282014523!3d30.32535097694201!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390929b935f09979%3A0xc35a8b5c9f9c100d!2sMarshall%20School!5e0!3m2!1sen!2sin!4v1683394245202!5m2!1sen!2sin"
+                    width="600" height="450" style="border:0;" allowfullscreen="" class="mb-5" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+            </div>
+        </div>
+        <div class="container shadow-lg mt-5" style="border-radius: 1rem 1rem 1rem 1rem;">
+            <div class="row">
+
+                <div class="mt-5 ">
+                    <h3 style="color: #f80;" class="text-center">
+                        <%= d.name %> Basic Details
+                    </h3>
+                </div>
+                <table class="table col-md-12 col-sm-12 col-xs-12 ">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <p><b>Instruction Medium</b></p>
+                            </td>
+                            <td>
+                                <p>
+                                    <%= d.instructionMedium %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><b>Affiliated Board</b></p>
+                            </td>
+                            <td>
+                                <p>
+                                    <%= d. affiliatedBoard %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><b>PhoneNumber </b></p>
+                            </td>
+                            <td>
+                                <p>
+                                    <%= d.PhoneNumber %>
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><b>Email</b></p>
+                            </td>
+                            <td>
+                                <p>
+                                    summervalleyschool@gmail.com
+                                </p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p><b>India Rank</b></p>
+                            </td>
+                            <td>
+                                <p>
+                                    850 out of 1914 CISCE Schools
+                                </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-info text-center" data-bs-toggle="modal" data-bs-target="#book"
+                    style="margin-bottom: 13px;">Apply
+                    Now</button>
+            </div><!--row end-->
+            <!-- Modal book-->
+            <div class="modal fade" id="book" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form action="/bookinsert" method="post">
+                                <div class="mb-3">
+                                    <label>Name</label>
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Email</label>
+                                    <input type="text" name="email" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Phone</label>
+                                    <input type="text" name="phone" class="form-control">
+                                </div>
+                                <div class="mb-3">
+                                    <label>Address</label>
+                                    <textarea name="address" class="form-control"></textarea>
+                                </div>
+                                <button type="submit" class="btn btn-info">Submit</button>
+                            </form>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--container end-->
+
+
+        <%- include('./footer.ejs') %>

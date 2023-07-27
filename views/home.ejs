@@ -1,0 +1,114 @@
+<%- include('./header.ejs') %>
+    <div class="carousel slide" data-bs-ride="carousel" id="s">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#s" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <% s.forEach((item)=>{ %>
+
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="<%= item.image.url %>"
+                    class=" w-100" height="600px">
+                <div class="carousel-caption">
+                    <h1>
+                        <%= item.tittle %>
+                    </h1>
+                    <p style="font-size: 25px;">
+                        
+                    </p>
+
+                </div>
+
+            </div>
+            <%}) %>
+
+           
+        </div><!--carousel-inner end-->
+
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#s" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#s" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div><!--carousel end-->
+
+    <!--search start-->
+    <div class="container-fluid bg-secondary mb-5" style="padding: 30px;">
+        <div class="container">
+            <form action="/search" method="post">
+                <div class="row g-2">
+                    <div class="col-md-12">
+                        <div class="row g-2">
+                            <div class="col-md-10">
+                                <input type="text" name="search" placeholder="Search By City Location"
+                                    class="form-control py-3 text-center">
+                            </div>
+                            <div class="col-md-2">
+                                <a href="">
+                                    <button class="btn btn-danger border-0 w-100 py-3">Search</button>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+    <!--search end-->
+    <div class="mt-5 text-center">
+        <h1>Scientific Approach of Finding Best School</h1>
+        <p>Experience the Power of Data Analysis</p>
+
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <% c.forEach((item)=>{ %>
+                <div class="col-md-4 text-center mb-5 ">
+                    <a href="/school_list/<%= item.name %>" class="text-decoration-none">
+                        <div class="box">
+                            <img src="<%= item.image.url %>"
+                                class="image w-100">
+                        </div>
+                        <h3 class="ab" style="color: white;">
+                           <%= item.name %>
+                        </h3>
+                    </a>
+                </div>
+           <% }) %>
+            
+        </div><!--row end-->    
+
+
+        
+
+    </div><!--container end-->
+    <br>
+
+    <%- include('./footer.ejs') %>
+
+
+
+
+
+
+
+
+
+
+
+        </body>
+
+        </html>

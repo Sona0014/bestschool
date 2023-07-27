@@ -1,0 +1,109 @@
+<%- include('../header.ejs') %>
+    <%- include('../sidebar.ejs') %>
+
+        <!-- Content Wrapper. Contains page content -->
+        <div class="content-wrapper">
+            <div class="card">
+                <div class="card-header">
+                    <h3 class="card-title">View School</h3>
+                   
+                </div>
+                <!-- /.card-header -->
+                <div class="card-body">
+                    <table id="example1" class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Category</th>
+                                <th>Image</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                          
+                                <tr>
+                                    <td><%= d._id %></td>
+                                    <td><%= d.name %></td>
+                                    <td><%= d.address %></td>
+                                    <td><%= d.category %></td>
+                                    <td><img src="<%= d.image.url %>" width="100"></td>
+                                   
+                                </tr>
+
+                            
+
+
+                        </tbody>
+                        <tfoot>
+                            <tr>
+                                <th>Id</th>
+                                <th>Name</th>
+                                <th>Address</th>
+                                <th>Category</th>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </div>
+                <!-- /.card-body -->
+
+
+                <!-- modal start add school -->
+                <div class="modal fade" id="modal-default">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h4 class="modal-title">Add School</h4>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="/admin/insertschool" method="post">
+                                    <div class="form-group">
+                                        <label>Name</label>
+                                        <input type="text" name="name" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Address</label>
+                                        <input type="text" name="address" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Des</label>
+                                        <input type="text" name="des" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>AffiliatedBoard</label>
+                                        <input type="text" name="affiliatedBoard" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>InstructionMedium</label>
+                                        <input type="text" name="instructionMedium" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>category</label>
+                                        <input type="text" name="category" class="form-control" required>
+                                    </div>
+
+
+                                    <button class="btn btn-success">Submit</button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <!-- /.modal-content -->
+                    </div>
+                    <!-- /.modal-dialog -->
+                </div>
+                <!-- /.modal end -->
+            </div>
+            <!-- /.card -->
+
+
+
+        </div>
+        <!-- /.content-wrapper -->
+
+
+        <%- include('../footer.ejs') %>

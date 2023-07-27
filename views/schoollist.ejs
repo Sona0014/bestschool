@@ -1,0 +1,110 @@
+<%- include('./header.ejs') %>
+    <div class="carousel slide" data-bs-ride="carousel" id="s">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#s" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="3"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100" height="600px">
+                <div class="carousel-caption">
+
+                </div>
+
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100 " height="600px">
+
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/357271/pexels-photo-357271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100 " height="600px">
+
+            </div>
+            <div class="carousel-item " data-bs-interval="2000">
+                <img src="https://images.pexels.com/photos/2305098/pexels-photo-2305098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100" height="600px">
+            </div>
+        </div><!--carousel-inner end-->
+
+        <!--search start-->
+        <div class="container-fluid bg-secondary mb-5" style="padding: 30px;">
+            <div class="container">
+                <form action="/search" method="post">
+                    <div class="row g-2">
+                        <div class="col-md-12">
+                            <div class="row g-2">
+                                <div class="col-md-10">
+                                    <input type="text" name="search" placeholder="Search By City Location"
+                                        class="form-control py-3 text-center">
+                                </div>
+                                <div class="col-md-2">
+                                    <a href="">
+                                        <button class="btn btn-danger border-0 w-100 py-3">Search</button>
+                                    </a>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <!--search end-->
+
+        <div class="mt-5 text-center">
+            <h1>
+                <a style="color: #f80;">Top Schools of <%= n %></a>
+            </h1>
+        </div>
+
+        <div class="container ">
+            <div class="row">
+               
+                <% d.forEach((item)=>{ %>
+                    <div class="col-md-4 mt-5">
+                        <div class="box">
+                            <img src="<%= item.image.url %>"
+                                class="w-100" style="height: 280px;" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-8 mt-3">
+                        <a href="" style="text-decoration: none;">
+                            <h3 style="color: #f80;">
+                                <%= item.name %>
+                            </h3>
+                        </a>
+                        <p style="font-size: 10px; text-align: justify;">
+                            <%= item.address %>
+                        </p>
+                        <p style="text-align: justify;">
+                            <%= item.des %>
+                        </p>
+    
+                        <a href="/schooldetail/<%= item._id %>">
+                            <button class="btn btn-info">More...</button>
+                        </a>
+    
+                    </div>
+
+               <% }) %>
+                
+
+
+                
+
+
+
+
+            </div>
+        </div>
+
+        <%- include('./footer.ejs') %>

@@ -1,0 +1,100 @@
+<%- include('./header.ejs') %>
+    <div class="carousel slide" data-bs-ride="carousel" id="s">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#s" data-bs-slide-to="0" class="active"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="1"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="2"></button>
+            <button type="button" data-bs-target="#s" data-bs-slide-to="3"></button>
+        </div>
+
+        <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/2982449/pexels-photo-2982449.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100" height="600px">
+                <div class="carousel-caption">
+
+                </div>
+
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/207692/pexels-photo-207692.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100 " height="600px">
+
+            </div>
+            <div class="carousel-item" data-bs-interval="4000">
+                <img src="https://images.pexels.com/photos/357271/pexels-photo-357271.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100 " height="600px">
+
+            </div>
+            <div class="carousel-item " data-bs-interval="2000">
+                <img src="https://images.pexels.com/photos/2305098/pexels-photo-2305098.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                    class=" w-100" height="600px">
+            </div>
+        </div><!--carousel-inner end-->
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#s" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#s" data-bs-slide="next">
+            <span class="carousel-control-next-icon"></span>
+        </button>
+    </div><!--carousel end-->
+    <!--search start-->
+    <div class="container-fluid bg-secondary mb-5" style="padding: 30px;">
+        <div class="container">
+            <form action="/search" method="post">
+                <div class="row g-2">
+                    <div class="col-md-12">
+                        <div class="row g-2">
+                            <div class="col-md-10">
+                                <input type="text" name="search" placeholder="Search By City Location"
+                                    class="form-control py-3 text-center">
+                            </div>
+                            <div class="col-md-2">
+                                <a href="">
+                                    <button class="btn btn-danger border-0 w-100 py-3">Search</button>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </form>
+        </div>
+
+    </div>
+    <!--search end-->
+
+    <div class="container-fluid " style="margin-top: 100px;">
+        <div class="container shadow-lg" style="border-radius: 1rem 1rem 1rem 1rem;">
+            <div class="row">
+                <h1 class="mt-5 text-center" style="color:#386576;">
+                    <span style=" border-bottom: 2px solid #386576;">Do Contact!</span>
+                </h1>
+                <div class="col-sm-2"></div>
+                <div class="col-sm-8 mt-1">
+                    <form action="/insertcontact" id="studentForm" method="post" class="text-center"
+                        novalidate="novalidate">
+                        <input type="text" name="name" id="name" class="form-control mt-4" placeholder="Name"
+                            fdprocessedid="d44i9a">
+                        <input type="email" name="email" id="email" class="form-control mt-4" placeholder="email"
+                            fdprocessedid="25961b">
+                        <input type="number" name="phone" id="phone" class="form-control mt-4" placeholder="phone"
+                            fdprocessedid="axhytb">
+                        <textarea class="form-control mt-4" name="message" placeholder="Message"></textarea>
+                        <button class="btn mt-4"
+                            style="background:#6696a0;; color: white; border:0; padding: 12px 26px;"
+                            fdprocessedid="9ev7s">Send
+                            Message</button>
+                    </form>
+                    <br>
+                </div>
+                <div class="col-sm-2"></div>
+            </div><!--row end-->
+        </div><!--container end-->
+    </div>
+
+<%- include('./footer.ejs') %>
