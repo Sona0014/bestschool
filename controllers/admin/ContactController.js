@@ -1,4 +1,4 @@
-const ContactModel = require("../../models/contact");
+const ContactModel = require("../../models/Contact");
 
 class ContactController{
 
